@@ -15,10 +15,6 @@ class BaseTableViewCell: UITableViewCell {
     private var nameLabel = UILabel()
     private var contentLable = UILabel()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         nameLabel = UILabel.init(frame: CGRect(x: 40, y: 20, width: 200, height: 20))
@@ -32,6 +28,11 @@ class BaseTableViewCell: UITableViewCell {
         nameLabel.text = baseModel.name
         contentLable.text = baseModel.content
     }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
